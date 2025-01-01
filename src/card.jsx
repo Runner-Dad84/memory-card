@@ -14,6 +14,7 @@ const CardComponent = ( {color} ) => {
 
     return (
         <button
+         className='cardBtn'
          onClick = {select}
         >
             <img src="" alt={color} />
