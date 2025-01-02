@@ -4,7 +4,10 @@ const images = [
     5116436, 
 ];
 
-
+function generateURL (key, id) {
+    let imgURL = `http://pixabay.com/api/?key=${key}&q=${id}`;
+    return imgURL;
+}
 
 const FetchImg = () => {
 
