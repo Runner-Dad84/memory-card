@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ImageComponent  from './Fetch.jsx'
+
 
 const CardComponent = ( {color} ) => {
     const [click, setclick] = useState(false)
@@ -15,10 +17,9 @@ const CardComponent = ( {color} ) => {
     return (
         <button
          className='cardBtn'
-         onClick = {select}
         >
-            <img src="" alt={color} />
-
+        <ImageComponent
+      />
         </button>
     )
 }
