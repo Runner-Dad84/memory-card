@@ -8,6 +8,7 @@ const CardComponent = ( {color} ) => {
     const select = () => {
         if (click === false){
             setclick(true)
+            console.log('selected')
         };
         if (click === true){
             console.log('game over')
@@ -17,9 +18,12 @@ const CardComponent = ( {color} ) => {
     return (
         <button
          className='cardBtn'
+         onClick={select}
         >
-        <ImageComponent
-      />
+        <div className= 'image-container'>
+            <ImageComponent/>
+        </div>
+       
         </button>
     )
 }
