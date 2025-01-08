@@ -37,6 +37,12 @@
   padding: 2em;
 }
 
+img {
+  height: 400px;
+  width: 300px;
+
+}
+
 .read-the-docs {
   color: #888;
 }
