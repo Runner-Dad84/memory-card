@@ -7,33 +7,33 @@ import { useState, useEffect } from 'react';
 const ImageComponent = () => {
 
     const imageIds = [
-        '7970076',
-        '1483681',
-        '789501',
-        '3619698',
-        '2245743',
-        '3584313',
-        '3619698',
-        '4406410',
-        '7170837',
-        '6566978',
-        '5386820',
-        '5588005',
-        '453164',
-        '5693094',
-        '6907857',
-        '5570684',
-        '7417091',
-        '7264439'
+        { id: '7970076', clicked: false },
+        { id: '1483681', clicked: false },
+        { id: '789501', clicked: false },
+        { id: '3619698', clicked: false },
+        { id: '2245743', clicked: false },
+        { id: '3584313', clicked: false },
+        { id: '3619698', clicked: false },
+        { id: '4406410', clicked: false },
+        { id: '7170837', clicked: false },
+        { id: '6566978', clicked: false },
+        { id: '5386820', clicked: false },
+        { id: '5588005', clicked: false },
+        { id: '453164', clicked: false },
+        { id: '5693094', clicked: false },
+        { id: '6907857', clicked: false },
+        { id: '5570684', clicked: false} ,
+        { id: '7417091', clicked: false },
+        { id: '7264439', clicked: false },
     ]
     
 
     const [image, setImage] = useState (null);
     const [error, setError] = useState (null);
-    const [imageID, setimageID] = useState (imageIds[Math.floor(Math.random() * imageIds.length)])
+    const [imageID, setimageID] = useState (imageIds[Math.floor(Math.random() * imageIds.length)].id)
 
     function updateImage (){
-        setimageID(imageIds[Math.floor(Math.random() * imageIds.length)]);
+        setimageID(imageIds[Math.floor(Math.random() * imageIds.length)].id);
     }
 
     useEffect(() => {
