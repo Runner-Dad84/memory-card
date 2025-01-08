@@ -1,30 +1,24 @@
 import { useState, useEffect } from 'react';
 
-/*
-const images = [
-    5116436, 
-];
-
 
 function generateURL (key, id) {
     let imgURL = `http://pixabay.com/api/?key=${apiKey}&id=${exID}`;
     return imgURL;
 }
-*/
 
 const ImageComponent = () => {
     
 
     const [image, setImage] = useState (null);
     const [error, setError] = useState (null);
-    const exID = '5116436';
+    const [imageID, setimageID] = useState ('5116436')
 
     useEffect(() => {
         const fetchImage = async ()=> {
             try {
                 const apiKey = '47983806-5d69dad02fddea8f4141376c1';
                 const proxyURL = 'https://corsproxy.io/?';
-                const targetAPI = `http://pixabay.com/api/?key=${apiKey}&id=${exID}`;
+                const targetAPI = `http://pixabay.com/api/?key=${apiKey}&id=${imageID}`;
                 const response = await fetch (proxyURL + targetAPI);
                    
 
@@ -48,7 +42,7 @@ const ImageComponent = () => {
             
         };
         fetchImage();
-    }, [image])
+    }, [image, imageID])
 
     if (error) {
         return <p>There was an error locating the image: {error}</p>
