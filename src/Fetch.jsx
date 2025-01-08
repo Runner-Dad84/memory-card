@@ -1,29 +1,31 @@
 import { useState, useEffect } from 'react';
 
 
-const imageIds = [
-    '7970076',
-    '1483681',
-    '789501',
-    '3619698',
-    '2245743',
-    '3584313',
-    '3619698',
-    '4406410',
-    '7170837',
-    '6566978',
-    '5386820',
-    '5588005',
-    '453164',
-    '5693094',
-    '6907857',
-    '5570684',
-    '7417091',
-    '7264439'
-]
+
 
 
 const ImageComponent = () => {
+
+    const imageIds = [
+        '7970076',
+        '1483681',
+        '789501',
+        '3619698',
+        '2245743',
+        '3584313',
+        '3619698',
+        '4406410',
+        '7170837',
+        '6566978',
+        '5386820',
+        '5588005',
+        '453164',
+        '5693094',
+        '6907857',
+        '5570684',
+        '7417091',
+        '7264439'
+    ]
     
 
     const [image, setImage] = useState (null);
@@ -54,6 +56,7 @@ const ImageComponent = () => {
             if ( data.hits && data.hits.length > 0 ){
                 setImage(data.hits[0].largeImageURL);
                 console.log(data.hits[0].largeImageURL);
+                console.log(imageIds)
             } else {
                 throw new Error ('image not found');
             }
