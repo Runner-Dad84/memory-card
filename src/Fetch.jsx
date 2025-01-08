@@ -6,16 +6,22 @@ function generateURL (key, id) {
     return imgURL;
 }
 
+const imageIds = [
+    '7970076',
+    '1483681',
+    '789501',
+]
+
+
 const ImageComponent = () => {
     
 
     const [image, setImage] = useState (null);
     const [error, setError] = useState (null);
-    const [imageID, setimageID] = useState ('5116436')
+    const [imageID, setimageID] = useState (imageIds[Math.floor(Math.random() * imageIds.length)])
 
     function updateImage (){
-        console.log('test');
-        setimageID('7970076');
+        setimageID(imageIds[Math.floor(Math.random() * imageIds.length)]);
     }
 
     useEffect(() => {
