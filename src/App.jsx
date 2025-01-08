@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import CardComponent from './card.jsx'
+
 import ImageComponent  from './Fetch.jsx'
 import './App.css'
 
@@ -9,13 +9,9 @@ function App() {
 
   return (
     <div>
-      <CardComponent
-      color={'blue'}
-      />
-     
-      
-      
-
+      <ImageComponent />
+      <ImageComponent />
+      <ImageComponent />
     </div>
 
 
