@@ -13,6 +13,11 @@ const ImageComponent = () => {
     const [error, setError] = useState (null);
     const [imageID, setimageID] = useState ('5116436')
 
+    function updateImage (){
+        console.log('test');
+        setimageID('7970076');
+    }
+
     useEffect(() => {
         const fetchImage = async ()=> {
             try {
@@ -52,7 +57,11 @@ const ImageComponent = () => {
     }
 
     return (
-        <img src={image} alt='castle' />
+        <img 
+        src={image} 
+        alt='castle'
+        onClick={updateImage}
+        />
     )
 }
 
