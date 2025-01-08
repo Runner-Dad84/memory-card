@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
 
-function generateURL (key, id) {
-    let imgURL = `http://pixabay.com/api/?key=${apiKey}&id=${exID}`;
-    return imgURL;
-}
-
 const imageIds = [
     '7970076',
     '1483681',
