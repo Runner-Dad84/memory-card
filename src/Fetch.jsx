@@ -1,39 +1,16 @@
 import { useState, useEffect } from 'react';
-
-
-
+import { ImageIds } from './card.jsx'
 
 
 const ImageComponent = () => {
 
-    const imageIds = [
-        { id: '7970076', clicked: false },
-        { id: '1483681', clicked: false },
-        { id: '789501', clicked: false },
-        { id: '3619698', clicked: false },
-        { id: '2245743', clicked: false },
-        { id: '3584313', clicked: false },
-        { id: '3619698', clicked: false },
-        { id: '4406410', clicked: false },
-        { id: '7170837', clicked: false },
-        { id: '6566978', clicked: false },
-        { id: '5386820', clicked: false },
-        { id: '5588005', clicked: false },
-        { id: '453164', clicked: false },
-        { id: '5693094', clicked: false },
-        { id: '6907857', clicked: false },
-        { id: '5570684', clicked: false} ,
-        { id: '7417091', clicked: false },
-        { id: '7264439', clicked: false },
-    ]
-    
 
     const [image, setImage] = useState (null);
     const [error, setError] = useState (null);
-    const [imageID, setimageID] = useState (imageIds[Math.floor(Math.random() * imageIds.length)].id)
+    const [imageID, setimageID] = useState (ImageIds[Math.floor(Math.random() * ImageIds.length)].id)
 
     function updateImage (){
-        setimageID(imageIds[Math.floor(Math.random() * imageIds.length)].id);
+        setimageID(ImageIds[Math.floor(Math.random() * ImageIds.length)].id);
     }
 
     useEffect(() => {
@@ -56,7 +33,7 @@ const ImageComponent = () => {
             if ( data.hits && data.hits.length > 0 ){
                 setImage(data.hits[0].largeImageURL);
                 console.log(data.hits[0].largeImageURL);
-                console.log(imageIds)
+                console.log(ImageIds)
             } else {
                 throw new Error ('image not found');
             }
@@ -78,7 +55,7 @@ const ImageComponent = () => {
     return (
         <img 
         src={image} 
-        alt='castle'
+        alt={imageID}
         onClick={updateImage}
         />
     )
