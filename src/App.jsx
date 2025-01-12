@@ -88,6 +88,16 @@ function App() {
       alt={imageID}
       onClick={updateImage}
       />
+      <ImageComponent 
+      src={url}
+      alt={imageID}
+      onClick={updateImage}
+      />
+      <ImageComponent 
+      src={url}
+      alt={imageID}
+      onClick={updateImage}
+      />
       
     </div>
 
