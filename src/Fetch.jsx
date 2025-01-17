@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 //import { ImageIds } from './card.jsx'
 
 
-function ImageComponent ( {id} ) {
+function ImageComponent ( {id, setSelected} ) {
 
 
     const [image, setImage] = useState (null);
@@ -12,7 +12,9 @@ function ImageComponent ( {id} ) {
     const [imageID, setimageID] = useState (id)
 
     function updateImage (){
+        console.log({id});
         setimageID(id);
+        setSelected((prev) => [...prev, id]);
     }
 
     useEffect(() => {
