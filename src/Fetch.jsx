@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
-import { ImageIds } from './card.jsx'
+import PropTypes from 'prop-types'
+
+//import { ImageIds } from './card.jsx'
 
 
-const ImageComponent = () => {
+function ImageComponent ( {id} ) {
 
 
     const [image, setImage] = useState (null);
     const [error, setError] = useState (null);
-    const [imageID, setimageID] = useState (ImageIds[Math.floor(Math.random() * ImageIds.length)].id)
+    const [imageID, setimageID] = useState (id)
 
     function updateImage (){
-        setimageID(ImageIds[Math.floor(Math.random() * ImageIds.length)].id);
+        setimageID(id);
     }
 
     useEffect(() => {
@@ -33,7 +35,6 @@ const ImageComponent = () => {
             if ( data.hits && data.hits.length > 0 ){
                 setImage(data.hits[0].largeImageURL);
                 console.log(data.hits[0].largeImageURL);
-                console.log(ImageIds)
             } else {
                 throw new Error ('image not found');
             }
@@ -60,6 +61,11 @@ const ImageComponent = () => {
         />
     )
 }
+
+ImageComponent.propTypes = {
+    id: PropTypes.string.isRequired
+}
+
 
 
 export default ImageComponent;
