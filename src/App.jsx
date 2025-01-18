@@ -19,7 +19,7 @@ function App() {
 
   const images = randomArray .map((id) =>
     <ImageComponent 
-      key={id} 
+      key={id * Math.random()} 
       id={id}
       setSelected={setSelected}
    />
