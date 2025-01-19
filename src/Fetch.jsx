@@ -12,9 +12,17 @@ function ImageComponent ( {id, setSelected} ) {
     const [imageID, setimageID] = useState (id)
 
     function updateImage (){
-        console.log({id});
         setimageID(id);
-        setSelected((prev) => [...prev, id]);
+        setSelected((prev) => {
+            if (prev.includes(id)) 
+                { console.log('same img');
+                    return prev} else { 
+                    return [...prev, id]}
+            })
+
+
+
+        //setSelected((prev) => [...prev, id]);
     }
 
     useEffect(() => {
@@ -31,12 +39,12 @@ function ImageComponent ( {id, setSelected} ) {
                 }
 
             const data = await response.json();
-            console.log(data);
+            //console.log(data);
             
 
             if ( data.hits && data.hits.length > 0 ){
                 setImage(data.hits[0].largeImageURL);
-                console.log(data.hits[0].largeImageURL);
+                //console.log(data.hits[0].largeImageURL);
             } else {
                 throw new Error ('image not found');
             }
