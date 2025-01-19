@@ -15,8 +15,8 @@ function ImageComponent ( {id, setSelected} ) {
         setimageID(id);
         setSelected((prev) => {
             if (prev.includes(id)) 
-                { console.log('same img');
-                    return prev} else { 
+                { alert('You already picked this one!');
+                  return []; } else { 
                     return [...prev, id]}
             })
 
