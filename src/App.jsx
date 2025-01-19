@@ -25,12 +25,10 @@ function App() {
    />
   )
 
-//setimageID(ImageIds[Math.floor(Math.random() * ImageIds.length)].id);
-
   return (
     <div>
       {images}
-      {selected}
+      {JSON.stringify(selected)}
     </div>  
   )
 }
