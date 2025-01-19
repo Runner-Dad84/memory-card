@@ -17,7 +17,9 @@ function App() {
   }
   const shuffledArray = randomize(imageIds);
 
+  const pickCount = selected.length;
 
+  //Maps image component for image array
   const images = shuffledArray.map((id) =>
     <ImageComponent 
       key={id * Math.random()} 
@@ -28,7 +30,7 @@ function App() {
   return (
     <div>
       {images}
-      {JSON.stringify(selected)}
+      {`Unique Images Picked: ${pickCount}`}
     </div>  
   )
 }
