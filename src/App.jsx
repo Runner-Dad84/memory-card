@@ -30,7 +30,7 @@ function App() {
   return (
     <div>
       {images}
-      {`Unique Images Picked: ${pickCount}`}
+      <span>{`Unique Images Picked: ${pickCount}`}</span>
     </div>  
   )
 }
